@@ -1,17 +1,28 @@
 ## This is a collection of 2 functions - makeCacheMatrix() and cacheSolve(). The makeCacheMatrix() 
 ## 
 
-## Write a short comment describing this function
+## This function takes the initial matrix and stores it in a list. It also stores the inverse of the same matrix whenever setinverse() is called
 
 makeCacheMatrix <- function(x = matrix()) {
+        ##initialize a null varaible to store the inverse of the matrix passed
         m <- NULL
+        
+        ##function to set the value to the matrix passed. This matrix x has to be inversed
         set <- function(y) {
                 x <<- y
                 m <<- NULL
         }
+        
+        ##This function will return the passed matrix to be inversed whenever called
         get <- function() x
+        
+        ##This function will set the inversed matrix m whenever called.
         setinverse <- function(solve) m <<- solve
+        
+        ##This function will get the inverse matrix m whenever called
         getinverse <- function() m
+        
+        ##This is the list which will essentially carry the cache of the intial and cached matrix.
         list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
