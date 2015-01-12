@@ -55,9 +55,3 @@ cacheSolve <- function(x, ...) {
         ##return m (inversed matrix) to print it on the console
         m
 }
-
-a<- matrix(5:8,2,2)
-print(a)
-b<-makeCacheMatrix(a)
-print(b)
-cacheSolve(b)
